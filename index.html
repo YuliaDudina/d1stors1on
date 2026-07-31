@@ -6,36 +6,43 @@
 <title>My Page</title>
 <style>
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+margin: 0;
+padding: 0;
+height: 100%;
 }
 
 body {
-  background-image: url("assets/d1stors1on_background_web.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+background-image: url("assets/d1stors1on_background_web.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+.nav-button {
+position: absolute;
+top: 9%;
+height: 6.5vh;
+min-height: 40px;
+max-height: 160px;
+width: auto;
+cursor: pointer;
+transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+animation: wiggle 0.4s ease-in-out;
 }
 
 .mail-button {
-  position: absolute;
-  top: 9%;
-  right: 6%;
-  width: 15vw;
-  min-width: 120px;
-  max-width: 400px;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+right: 7%;
 }
 
-.mail-button:hover {
-  animation: wiggle 0.4s ease-in-out;
+.about-button {
+right: 32%;
 }
 
 @keyframes wiggle {
@@ -50,8 +57,12 @@ body {
 </head>
 <body>
 
+<a href="about.html">
+<img src="assets/button_about.png" alt="about" class="nav-button about-button">
+</a>
+
 <a href="mailto:d1stors1on.graphicdesign@gmail.com">
-<img src="assets/button_mail.png" alt="contact us" class="mail-button">
+<img src="assets/button_mail.png" alt="contact us" class="nav-button mail-button">
 </a>
 
 </body>
