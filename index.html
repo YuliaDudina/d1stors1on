@@ -12,15 +12,15 @@ height: 100%;
 }
 
 body {
-  background-image: url("assets/d1stors1on_background_web.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  cursor: url("assets/mouse_heart.png") 0 0, auto;
+background-image: url("assets/d1stors1on_background_web.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+cursor: url("assets/mouse_heart.png") 0 0, auto;
 }
 
 .nav-button {
@@ -46,6 +46,14 @@ right: 7%;
 right: 32%;
 }
 
+.works-button {
+right: 43%;
+}
+
+.insta-button {
+left: 6%;
+}
+
 @keyframes wiggle {
   0% { transform: rotate(0deg); }
   20% { transform: rotate(-8deg); }
@@ -58,12 +66,20 @@ right: 32%;
 </head>
 <body>
 
+<a href="works.html">
+<img src="assets/button_works.png" alt="works" class="nav-button works-button">
+</a>
+
 <a href="about.html">
 <img src="assets/button_about.png" alt="about" class="nav-button about-button">
 </a>
 
 <a href="mailto:d1stors1on.graphicdesign@gmail.com">
 <img src="assets/button_mail.png" alt="contact us" class="nav-button mail-button">
+</a>
+
+<a href="https://www.instagram.com/d1stors1on_design/">
+<img src="assets/insta.png" alt="open instagram page" class="nav-button insta-button">
 </a>
 
 </body>

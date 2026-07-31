@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works</title>
+<style>
+html, body {
+margin: 0;
+padding: 0;
+min-height: 100%;
+}
+
+body {
+background-color: #000;
+cursor: url("assets/mouse_heart.png") 0 0, auto;
+position: relative;
+}
+
+.works-header {
+position: absolute;
+top: 9%;
+left: 7%;
+height: 6.5vh;
+min-height: 40px;
+max-height: 160px;
+width: auto;
+}
+
+.nav-button {
+position: absolute;
+top: 9%;
+height: 6.5vh;
+min-height: 40px;
+max-height: 160px;
+width: auto;
+cursor: pointer;
+transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+animation: wiggle 0.4s ease-in-out;
+}
+
+.home-button {
+right: 7%;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.gallery {
+margin: 0 7%;
+padding-top: 20vh;
+padding-bottom: 6vh;
+column-count: 3;
+column-gap: 2%;
+}
+
+.gallery-item {
+display: block;
+break-inside: avoid;
+margin-bottom: 2%;
+}
+
+.gallery-item img {
+display: block;
+width: 100%;
+height: auto;
+}
+
+@media (max-width: 700px) {
+.gallery {
+column-count: 1;
+  }
+}
+</style>
+</head>
+<body>
+
+<img src="assets/button_works_white.png" alt="works" class="works-header">
+
+<a href="index.html">
+<img src="assets/button_home_pink.png" alt="home" class="nav-button home-button">
+</a>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+
+const works = [
+  { src: "assets/tears_please.gif", link: "tears_please.html", alt: "tears please" },
+  { src: "assets/gluecose_Teach_a_man.jpg", link: "gluecose_teach_a_man.html", alt: "gluecose - teach a man" },
+  { src: "assets/viedo_teach_a_man.gif", link: "viedo_teach_a_man.html", alt: "teach a man video" },
+  { src: "assets/shysha_zine.gif", link: "shysha_zine.html", alt: "shysha zine" },
+  { src: "assets/palma_plaza_million.jpg", link: "palma_plaza_million.html", alt: "palma plaza million" }
+];
+
+const gallery = document.getElementById("gallery");
+
+// Preload every image first so Safari knows each one's real
+// width/height before anything is laid out in the column gallery.
+// This stops the "shift after a few seconds" bug, since there's
+// no late reflow once gifs/images finish loading.
+Promise.all(
+  works.map(work => {
+    return new Promise(resolve => {
+      const img = document.createElement("img");
+      img.src = work.src;
+      img.alt = work.alt;
+      img.onload = () => resolve({ work, img });
+      img.onerror = () => resolve({ work, img }); // don't block the rest if one fails
+    });
+  })
+).then(loaded => {
+  loaded.forEach(({ work, img }) => {
+    const a = document.createElement("a");
+    a.href = work.link;
+    a.className = "gallery-item";
+    a.appendChild(img);
+    gallery.appendChild(a);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+background-image: url("assets/d1stors1on_background_teach_a_man_cover.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+cursor: url("assets/mouse_heart.png") 0 0, auto;
+}
+
+.nav-button {
+  position: absolute;
+  top: 9%;
+  height: 6.5vh;
+  min-height: 40px;
+  max-height: 160px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+.back-button {
+  right: 7%;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.piece {
+  max-width: 80%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<a href="works.html">
+  <img src="assets/button_back.png" alt="back" class="nav-button back-button">
+</a>
+
+<img src="assets/gluecose_Teach_a_man.jpg" alt="gluecose - teach a man" class="piece">
+
+</body>
+</html>
